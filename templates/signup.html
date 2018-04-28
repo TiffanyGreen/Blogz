@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Signup for Blogz!</h1>
+<form action="/signup" method="post">
+    <table>
+        <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+                <input name="username" type="text" autocomplete="on" value='{{ username }}'>
+                <span class="error" name = "username_error" value = "{{ username_error }}">{{ username_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password" autocomplete="off" value='{{ password }}'>
+                <span class="error" name = "password_error" value = "{{ password_error }}">{{ password_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="verify">Verify Password</label></td>
+            <td>
+                <input name="verify" type="password" value='{{ verify }}'>
+                <span class="error" name = "verify_error" value = "{{ verify_error }}">{{ verify_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td>
+                <input name="email" type ="text" autocomplete="on" value="">
+                <span class="error" name = "invalid_email_error" value = "{{ invalid_email_error }}">{{ invalid_email_error }}</span>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Signup">
+</form>
+{% endblock %}
